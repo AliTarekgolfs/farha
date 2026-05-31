@@ -5,14 +5,16 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const EVENT_TYPES = [
-  { label: "💍 Khatba", value: "khatba" },
+  { label: "💍 Khotooba", value: "khotooba" },
   { label: "📜 Katb Ktab", value: "katbktab" },
   { label: "👰 Wedding", value: "wedding" },
   { label: "🏖️ Beach Party", value: "beach" },
   { label: "🏠 House Party", value: "house" },
+  { label: "🛥️ Boat Party", value: "boat" },
   { label: "🎂 Birthday", value: "birthday" },
-  { label: "🎊 Graduation", value: "graduation" },
-  { label: "🌙 Ramadan Gathering", value: "ramadan" },
+  { label: "🌙 Iftar", value: "iftar" },
+  { label: "🌜 Suhoor", value: "suhoor" },
+  { label: "🎓 After Grad", value: "aftergrad" },
   { label: "✨ Other", value: "other" },
 ];
 

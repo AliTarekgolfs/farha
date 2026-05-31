@@ -1,3 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --farha-yellow: #FFD93D;
+  --farha-orange: #FF6B35;
+  --farha-pink: #FF4D8D;
+  --farha-purple: #7B2FBE;
+  --farha-cream: #FFF8F0;
+}
+
+body {
+  background-color: var(--farha-cream);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer utilities {
+  .gradient-farha {
+    background: linear-gradient(135deg, #FF4D8D 0%, #FF6B35 50%, #FFD93D 100%);
+  }
+  .text-gradient-farha {
+    background: linear-gradient(135deg, #FF4D8D 0%, #FF6B35 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Farha — فرحة",
+  description: "Create and share beautiful event invitations. RSVP in seconds.",
+  openGraph: {
+    title: "Farha — فرحة",
+    description: "Create and share beautiful event invitations.",
+    type: "website",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
+
 "use client";
 
 import Link from "next/link";
@@ -53,8 +107,7 @@ export default function HomePage() {
         </h1>
 
         <p className="text-xl text-gray-500 max-w-md mb-10 leading-relaxed">
-          Create a beautiful invitation in 2 minutes. Share on WhatsApp, Snap,
-          or Insta. Know who&apos;s coming — instantly.
+          Create an event, share the link, know who&apos;s coming.
         </p>
 
         <Link
@@ -127,14 +180,16 @@ export default function HomePage() {
         </h2>
         <div className="flex flex-wrap gap-3 justify-center">
           {[
-            "💍 Khatba",
+            "💍 Khotooba",
             "📜 Katb Ktab",
             "👰 Wedding",
-            "🏖️ Sahel Party",
+            "🏖️ Beach Party",
             "🏠 House Party",
+            "🛥️ Boat Party",
             "🎂 Birthday",
-            "🌙 Ramadan Gathering",
-            "🎊 Graduation",
+            "🌙 Iftar",
+            "🌜 Suhoor",
+            "🎓 After Grad",
           ].map((tag) => (
             <span
               key={tag}
